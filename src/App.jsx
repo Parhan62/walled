@@ -1,33 +1,36 @@
+import NavItems from './components/NavItems'
+import logo from './assets/Vector.png'
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+// import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [activeTab, setActiveTab] = useState("Dashboard")
+  const menu = [
+    {title: "Dashboard",
+    Link: "#"
+    },
+    {title: "Transfer",
+      Link: "#"
+    },
+    {title: "Topup",
+      Link: "#"
+    },
+    {title: "Sign Out",
+      Link: "#"
+    }
+  ]
 
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <nav className='flex items-center w-screen justify-between bg-white py-4 px-8 font bold'>
+        <img src = {logo}/>
+        <div className='flex gap-x-8'>
+          <NavItems
+            menu={menu}
+            activeTab={activeTab}
+            handleClick={setActiveTab} />
+        </div>
+      </nav>
     </>
   )
 }
