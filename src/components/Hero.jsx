@@ -4,6 +4,12 @@ import viewIcon from "../assets/view.png";
 
 function Hero() {
   const [showBalance, setShowBalance] = useState(true);
+  // const [username, setUsername] = useState("");
+  // useEffect(()=>{
+  //   const loginObj = localStorage.getItem("login");
+  //   const {email} = JSON.parse(loginObj);
+  //   setUsername(email);
+  // }, []);
 
   return (
     <section className="w-full px-16 mt-12">
