@@ -19,6 +19,7 @@ function Login() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    localStorage.setItem("login", JSON.stringify(loginForm));
     navigate("/dashboard");
   };
 
@@ -60,11 +61,10 @@ function Login() {
       <img
         src={loginBg}
         alt="login background"
-        className="w-1/2 object"
+        className="w-1/2 object-cover"
       />
     </section>
   );
-  // const login =JSON.stringify({email: "email", password:"password"})
 }
 
 export default Login;
